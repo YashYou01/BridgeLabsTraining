@@ -1,7 +1,13 @@
 ﻿using ConsoleApp1._2D_Arrays;
+using ConsoleApp1.arrayList;
 using ConsoleApp1.Arrays;
-//using ConsoleApp1.If_Else;
+//using ConsoleApp1.If_Else; 
+using System.Collections;
+
 using ConsoleApp1.Strings;
+using ConsoleApp1.Stacks;
+using ConsoleApp1.Queeue;
+using ConsoleApp1.HastTable;
 
 namespace ConsoleApp1
 {
@@ -9,20 +15,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            SumRC s = new SumRC();
-            int n =int.Parse( Console.ReadLine());
+            Iter print = new Iter();
+            Hashtable ht = new Hashtable();
+            Console.WriteLine("Enter no of entries");
+            int n=int.Parse(Console.ReadLine());
 
-            int m = int.Parse(Console.ReadLine());
-            int[,] array = new int[n, m];
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                for(int j = 0; j < m; j++)
-                {
-                    array[i,j]=int.Parse(Console.ReadLine());
-                }
+                Console.Write("Enter key: ");
+                string key = Console.ReadLine();
+
+                Console.Write("Enter value: ");
+                string value = Console.ReadLine();
+                    
+                ht.Add(key, value);
             }
-            s.sumr(array);
-            s.sumc(array);
+
+            print.iter(ht);
+
 
         }
 

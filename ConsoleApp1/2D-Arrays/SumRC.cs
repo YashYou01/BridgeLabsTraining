@@ -38,5 +38,4 @@ namespace ConsoleApp1._2D_Arrays
         }
     }
 
-    }
 }
