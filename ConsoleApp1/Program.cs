@@ -18,19 +18,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            QueueImpli q=new QueueImpli(6);
-            q.enqueue(10);
-            q.enqueue(9);
-            q.enqueue(8);
-            q.enqueue(7);
-            q.enqueue(6);
-            q.enqueue(5);
+            //LonestSS str = new LonestSS();
+            //Console.WriteLine("Enter a String: ");
+            //string s=Console.ReadLine();
 
+            //Console.WriteLine(str.lenOfLongSS(s));
 
-            q.print();
+            var ll = new LinkedList();
+            ll.push(5);
+            ll.push(6);
+            ll.push(7);
+            ll.push(8);
+
+            ll.print(); 
+            Console.WriteLine(ll.pop());
 
 
         }
 
     }
 }
+
