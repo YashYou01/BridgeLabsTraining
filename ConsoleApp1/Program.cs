@@ -11,6 +11,9 @@ using ConsoleApp1.Strings;
 using System.Collections;
 using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
+using System;
+using System.IO;
+using System.Text;
 
 namespace ConsoleApp1
 {
@@ -18,22 +21,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //LonestSS str = new LonestSS();
-            //Console.WriteLine("Enter a String: ");
-            //string s=Console.ReadLine();
+            string fp= @"C:\Users\hp\OneDrive\Desktop\BridgeLabsTraining\ConsoleApp1\File Handling\FirstFile.txt";
 
-            //Console.WriteLine(str.lenOfLongSS(s));
+            using (FileStream fs = new FileStream(fp, FileMode.Open, FileAccess.Read))
+            {
+                using (StreamReader sw = new StreamReader(fs))
+                {
+                    StringBuilder sb = new StringBuilder();
 
-            var ll = new LinkedList();
-            ll.push(5);
-            ll.push(6);
-            ll.push(7);
-            ll.push(8);
+                    while (!sw.EndOfStream)
+                    {
+                        sb.AppendLine(sw.ReadLine());
+                        
+                    } 
+                    Console.WriteLine(sb.ToString());
 
-            ll.print(); 
-            Console.WriteLine(ll.pop());
-
-
+                }
+            }
+            
         }
 
     }
